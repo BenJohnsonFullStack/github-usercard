@@ -6,7 +6,9 @@ import axios from 'axios';
     https://api.github.com/users/<your name>
 */
 
-axios.get("https://api.github.com/users/BenJohnsonFullStack");
+const getGitHub = () => {
+  axios.get("https://api.github.com/users/BenJohnsonFullStack");
+}
 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
