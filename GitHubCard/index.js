@@ -5,10 +5,8 @@ import axios from 'axios';
     (replacing the placeholder with your Github name):
     https://api.github.com/users/<your name>
 */
+axios.get("https://api.github.com/users/BenJohnsonFullStack");
 
-const getGitHub = () => {
-  axios.get("https://api.github.com/users/BenJohnsonFullStack");
-}
 
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
@@ -55,7 +53,36 @@ const followersArray = [];
       </div>
     </div>
 */
+const cardMaker = (obj) => {
+  const card = document.createElement("div");
+  const img = document.createElement("img");
+  const cardInfo = document.createElement("div");
+  const name = document.createElement("h3");
+  const userName = document.createElement("p");
+  const location = document.createElement("p");
+  const profile = document.createElement("p");
+  const pageAddress = document.createElement("a");
+  const followers = document.createElement("p");
+  const following = document.createElement("p");
+  const bio = document.createElement("p");
 
+  card.className = "card";
+  cardInfo.className = "card-info";
+  name.className = "name";
+  userName.className = "username";
+
+  img.src = obj.avatar_url;
+  name.textContent = obj.name;
+  userName.textContent = obj.login;
+  location.textContent = obj.location;
+  profile.textContent = "Profile: ";
+  pageAddress.textContent = obj.html_url;
+  pageAddress.href = obj.html_url;
+  followers.textContent = obj.followers;
+  following.textContent = obj.following;
+  bio.textContent = obj.bio;
+
+}
 /*
   List of LS Instructors Github username's:
     tetondan
